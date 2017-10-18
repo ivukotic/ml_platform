@@ -1,0 +1,8 @@
+#!/bin/bash
+. /environment
+echo $PATH
+git clone https://github.com/ivukotic/ML_platform_tests.git
+echo "========= all set up. ============"
+cd ML_platform_tests
+ls
+"$@"
