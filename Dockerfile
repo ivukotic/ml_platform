@@ -22,7 +22,8 @@ RUN pip2 --no-cache-dir install \
         tensorflow-gpu \
         keras \
         elasticsearch \
-        gym
+        gym \
+        JSAnimation
 RUN python2 -m ipykernel.kernelspec
 
 #############################
@@ -49,7 +50,8 @@ RUN pip3 --no-cache-dir install \
         tensorflow-gpu \
         keras \
         elasticsearch \
-        gym
+        gym \
+        JSAnimation
 RUN python3 -m ipykernel.kernelspec
 
 # build info
