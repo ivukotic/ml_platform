@@ -10,6 +10,7 @@ RUN pip2 --no-cache-dir install \
         h5py \
         tables \
         ipykernel \
+        metakernel \
         jupyter \
         matplotlib \
         numpy \
@@ -34,6 +35,7 @@ RUN pip3 --no-cache-dir install \
         h5py \
         tables \
         ipykernel \
+        metakernel \
         jupyter \
         matplotlib \
         numpy \
