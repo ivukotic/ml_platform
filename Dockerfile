@@ -37,6 +37,7 @@ RUN pip3 --no-cache-dir install \
         ipykernel \
         metakernel \
         jupyter \
+        jupyterlab \
         matplotlib \
         numpy \
         pandas \
@@ -65,6 +66,8 @@ COPY run         /.run
 COPY shell       /.shell
 
 RUN chmod 755 .exec .run .shell
+
+RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 #execute service
 CMD ["/.run"]
