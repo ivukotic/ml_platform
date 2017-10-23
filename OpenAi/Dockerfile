@@ -24,6 +24,7 @@ RUN pip2 --no-cache-dir install \
         keras \
         elasticsearch \
         gym \
+        baselines \
         JSAnimation
 RUN python2 -m ipykernel.kernelspec
 
@@ -35,7 +36,6 @@ RUN pip3 --no-cache-dir install \
         h5py \
         tables \
         ipykernel \
-        metakernel \
         jupyter \
         jupyterlab \
         matplotlib \
@@ -46,10 +46,11 @@ RUN pip3 --no-cache-dir install \
         sklearn \
         qtpy \
         seaborn \
-        tensorflow-gpu \
         keras \
         elasticsearch \
+        tensorflow-gpu \
         gym \
+        baselines \
         JSAnimation
 RUN python3 -m ipykernel.kernelspec
 
