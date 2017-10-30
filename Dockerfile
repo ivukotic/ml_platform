@@ -54,6 +54,7 @@ RUN pip3 --no-cache-dir install \
         gym \
         graphviz \
         JSAnimation \
+        ipywidgets \
         Cython
 RUN python3 -m ipykernel.kernelspec
 
