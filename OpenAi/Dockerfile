@@ -25,6 +25,7 @@ RUN pip2 --no-cache-dir install \
         elasticsearch \
         gym \
         baselines \
+        pydot \
         JSAnimation
 RUN python2 -m ipykernel.kernelspec
 
@@ -51,6 +52,7 @@ RUN pip3 --no-cache-dir install \
         tensorflow-gpu \
         gym \
         baselines \
+        pydot \
         JSAnimation
 RUN python3 -m ipykernel.kernelspec
 
