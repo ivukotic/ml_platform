@@ -26,6 +26,7 @@ RUN pip2 --no-cache-dir install \
         gym \
         graphviz \
         JSAnimation \
+        uproot \
         Cython
 RUN python2 -m ipykernel.kernelspec
 
@@ -55,6 +56,7 @@ RUN pip3 --no-cache-dir install \
         graphviz \
         JSAnimation \
         ipywidgets \
+        uproot \
         Cython
 RUN python3 -m ipykernel.kernelspec
 
