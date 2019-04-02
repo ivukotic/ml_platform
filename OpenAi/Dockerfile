@@ -19,6 +19,7 @@ RUN pip2 --no-cache-dir install \
         scipy \
         sklearn \
         qtpy \
+        tqdm \
         seaborn \
         tensorflow-gpu \
         keras \
@@ -47,6 +48,7 @@ RUN pip3 --no-cache-dir install \
         scipy \
         sklearn \
         qtpy \
+        tqdm \
         seaborn \
         keras \
         elasticsearch \
