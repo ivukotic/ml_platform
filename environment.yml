@@ -1,0 +1,42 @@
+name: codas-hep
+
+channels:
+- conda-forge
+
+dependencies:
+- cython
+- elasticsearch
+- graphviz
+- h5py
+- ipykernel
+- ipywidgets
+- jsanimation
+- jupyter
+- jupyterlab
+- keras
+- librosa
+- matplotlib
+- metakernel
+- nb_conda_kernels
+- numpy
+- opencv
+- pandas
+- pillow
+- pip
+- pytables
+- python=3.7
+- pytorch-cpu
+- qtpy
+- rise
+- root
+- scipy
+- seaborn
+- sklearn
+- tensorflow
+- torchvision
+- tqdm
+- uproot
+- pip:
+  - gym
+  - torchtext
+  - torchvis 
