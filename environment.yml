@@ -5,6 +5,7 @@ channels:
 - conda-forge
 
 dependencies:
+- cmake
 - cython
 - elasticsearch
 - graphviz
@@ -16,9 +17,11 @@ dependencies:
 - jupyterlab
 - keras
 - librosa
+- make
 - matplotlib
 - metakernel
 - nb_conda_kernels
+- ninja
 - numpy
 - opencv
 - pandas
@@ -30,9 +33,9 @@ dependencies:
 - qtpy
 - rise
 - root
+- scikit-learn
 - scipy
 - seaborn
-- scikit-learn
 - tensorflow
 - torchvision
 - tqdm
