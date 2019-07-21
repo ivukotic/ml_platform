@@ -10,6 +10,7 @@ dependencies:
 - elasticsearch
 - graphviz
 - h5py
+- iminuit
 - ipykernel
 - ipywidgets
 - jsanimation
@@ -23,6 +24,9 @@ dependencies:
 - nb_conda_kernels
 - ninja
 - numpy
+- numba
+- numexpr
+- uncertainties
 - opencv
 - pandas
 - pillow
@@ -36,6 +40,7 @@ dependencies:
 - scikit-learn
 - scipy
 - seaborn
+- sympy
 - tensorflow
 - torchvision
 - tqdm
@@ -44,3 +49,6 @@ dependencies:
   - gym
   - torchtext
   - torchviz
+  - pyjet
+  - particle
+  - pyhf

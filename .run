@@ -1,5 +1,5 @@
 #!/bin/bash
-source activate codas-hep
+source /environment
 echo $PATH
 git clone https://github.com/ivukotic/ML_platform_tests.git
 echo "========= all set up. ============"
