@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu18.04
+FROM nvidia/cuda:10.0-runtime-ubuntu18.04
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
@@ -17,9 +17,6 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     chmod 755 /.exec /.run /.shell && \
     conda activate base && \
     jupyter serverextension enable --py jupyterlab --sys-prefix
-
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-    conda env create -f /environment-dl-minicourse.yml
 
 RUN . /opt/conda/etc/profile.d/conda.sh && \
     conda env create -f /environment-codas-hep.yml
