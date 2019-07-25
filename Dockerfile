@@ -7,6 +7,7 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 ##############################
 
 RUN pip2 --no-cache-dir install \
+        requests \
         h5py \
         tables \
         ipykernel \
@@ -36,6 +37,7 @@ RUN python2 -m ipykernel.kernelspec
 #############################
 
 RUN pip3 --no-cache-dir install \
+        requests \
         h5py \
         tables \
         ipykernel \
