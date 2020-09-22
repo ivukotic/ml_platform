@@ -13,7 +13,7 @@ RUN pip2 --no-cache-dir install \
         tables \
         ipykernel \
         metakernel \
-        jupyter \
+        # jupyter \
         matplotlib \
         numpy \
         pandas \
@@ -23,7 +23,7 @@ RUN pip2 --no-cache-dir install \
         qtpy \
         tqdm \
         seaborn \
-        tensorflow-gpu \
+        tensorflow \
         keras \
         elasticsearch \
         gym \
@@ -37,7 +37,7 @@ RUN python2 -m ipykernel.kernelspec
 # Python 3 packages
 #############################
 
-RUN pip3 --no-cache-dir install \
+RUN python3.8 -m pip --no-cache-dir install \
         requests \
         plumbum \
         h5py \
@@ -55,7 +55,7 @@ RUN pip3 --no-cache-dir install \
         qtpy \
         tqdm \
         seaborn \
-        tensorflow-gpu \
+        tensorflow \
         keras \
         elasticsearch \
         gym \
@@ -64,7 +64,7 @@ RUN pip3 --no-cache-dir install \
         ipywidgets \
         uproot \
         Cython
-RUN python3 -m ipykernel.kernelspec
+RUN python3.8 -m ipykernel install
 
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
