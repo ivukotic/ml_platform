@@ -14,6 +14,7 @@ RUN pip2 --no-cache-dir install \
         ipykernel \
         metakernel \
         # jupyter \
+        tensorflow \
         matplotlib \
         numpy \
         pandas \
@@ -23,7 +24,6 @@ RUN pip2 --no-cache-dir install \
         qtpy \
         tqdm \
         seaborn \
-        tensorflow \
         keras \
         elasticsearch \
         gym \
@@ -46,6 +46,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         metakernel \
         jupyter \
         jupyterlab \
+        tensorflow \
         matplotlib \
         numpy \
         pandas \
@@ -55,7 +56,6 @@ RUN python3.8 -m pip --no-cache-dir install \
         qtpy \
         tqdm \
         seaborn \
-        tensorflow \
         keras \
         elasticsearch \
         gym \
