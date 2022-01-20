@@ -2,37 +2,6 @@ FROM ivukotic/ml_base:latest
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
-# ##############################
-# # Python 2 packages
-# ##############################
-
-# RUN pip2 --no-cache-dir install \
-#         requests \
-#         plumbum \
-#         h5py \
-#         tables \
-#         ipykernel \
-#         metakernel \
-#         # jupyter \
-#         tensorflow \
-#         matplotlib \
-#         numpy \
-#         pandas \
-#         Pillow \
-#         scipy \
-#         sklearn \
-#         qtpy \
-#         tqdm \
-#         seaborn \
-#         keras \
-#         elasticsearch \
-#         gym \
-#         graphviz \
-#         JSAnimation \
-#         uproot \
-#         Cython
-# RUN python2 -m ipykernel.kernelspec
-
 #############################
 # Python 3 packages
 #############################
