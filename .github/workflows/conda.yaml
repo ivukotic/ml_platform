@@ -1,4 +1,4 @@
-name: Build ML platform image
+name: Build Conda ML platform image
 
 on:
   push:
