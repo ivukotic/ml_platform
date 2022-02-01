@@ -9,6 +9,7 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 RUN python3.8 -m pip --no-cache-dir install \
         requests \
         plumbum \
+        bokeh \
         h5py \
         tables \
         ipykernel \
