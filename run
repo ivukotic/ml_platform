@@ -3,7 +3,7 @@
 echo $PATH
 git clone https://github.com/ivukotic/ML_platform_tests.git
 echo "========= all set up. ============"
-cp -r /ML_platform_tests/tutorial /workspace
+# cp -r /ML_platform_tests/tutorial /workspace/tutorial
 cd ML_platform_tests
 ls
 "$@"
