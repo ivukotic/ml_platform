@@ -19,6 +19,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         jupyterlab \
         tensorflow \
         tensorflow_datasets \
+        imageio \
         matplotlib \
         numpy \
         pandas \
