@@ -10,6 +10,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         requests \
         plumbum \
         bokeh \
+        jupyter_bokeh \
         h5py \
         tables \
         ipykernel \
@@ -32,6 +33,8 @@ RUN python3.8 -m pip --no-cache-dir install \
         graphviz \
         JSAnimation \
         ipywidgets \
+        jupyterlab-git \
+        dask-labextension \
         uproot \
         Cython
 RUN python3.8 -m ipykernel install
@@ -47,6 +50,8 @@ COPY shell       /.shell
 RUN chmod 755 .exec .run .shell
 
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
+
+RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
 #execute service
 CMD ["/.run"]
