@@ -36,6 +36,8 @@ RUN python3.8 -m pip --no-cache-dir install \
         jupyterlab-git \
         dask-labextension \
         uproot \
+        root-pandas \
+        RISE \
         Cython
 RUN python3.8 -m ipykernel install
 
@@ -48,6 +50,9 @@ COPY run         /.run
 COPY shell       /.shell
 
 RUN chmod 755 .exec .run .shell
+
+RUN mkdir /workspace
+COPY private_jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
