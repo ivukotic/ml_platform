@@ -6,6 +6,10 @@ COPY environment-codas-hep.yml environment-dl-minicourse.yml environment .exec .
 
 RUN apt-get update && apt-get install -y wget git
 
+
+RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
+RUN chmod +x sync_users.sh
+
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
         bash ~/miniconda.sh -b -p /opt/conda
 
