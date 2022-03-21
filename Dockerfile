@@ -45,12 +45,16 @@ RUN python3.8 -m ipykernel install
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
+RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
+RUN chmod +x sync_users.sh
+
 COPY environment /environment
 COPY exec        /.exec
 COPY run         /.run
 COPY shell       /.shell
 
 RUN chmod 755 .exec .run .shell
+
 
 RUN mkdir /workspace
 COPY private_jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
