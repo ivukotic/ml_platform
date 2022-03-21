@@ -46,7 +46,7 @@ RUN python3.8 -m ipykernel install
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
-RUN chmod +x sync_users.sh
+RUN chmod +x sync_users_debian.sh
 
 COPY environment /environment
 COPY exec        /.exec
