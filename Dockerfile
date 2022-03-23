@@ -57,7 +57,7 @@ RUN chmod 755 .exec .run .shell
 
 
 RUN mkdir /workspace
-COPY private_jupyter_notebook_config.py /usr/etc/jupyter_notebook_config.py
+COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
 
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
