@@ -1,4 +1,4 @@
-name: Build and Push ml_platform image to Harbor
+name: Build and Push Conda ml_platform image to Harbor
 
 on:
   push:
