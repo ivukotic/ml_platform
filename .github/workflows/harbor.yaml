@@ -2,7 +2,8 @@ name: Build and Push ml_platform image to Harbor
 
 on:
   push:
-    branches: master
+    branches:
+      - "master"
   repository_dispatch:
     types:
       - dispatch-build
