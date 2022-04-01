@@ -22,8 +22,9 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
         conda activate base && \
         jupyter serverextension enable --py jupyterlab --sys-prefix
 
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-        conda env create -f /environment-codas-hep.yml
+RUN . /opt/conda/etc/profile.d/conda.sh 
+
+RUN . conda env create -f /environment-codas-hep.yml
 
 RUN mkdir /workspace
 
