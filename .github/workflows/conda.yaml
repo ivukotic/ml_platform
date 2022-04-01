@@ -1,0 +1,22 @@
+name: Build Conda ML platform image
+
+on:
+  push:
+    branches:
+      - "anaconda"
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Docker Build & Push Action
+        uses: mr-smithers-excellent/docker-build-push@v5.6
+        with:
+          image: ivukotic/ml_platform
+          tags: conda, ${{ github.sha }}
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
