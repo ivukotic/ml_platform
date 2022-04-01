@@ -24,7 +24,7 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
 
 RUN . /opt/conda/etc/profile.d/conda.sh 
 
-RUN . conda env create -f /environment-codas-hep.yml
+RUN conda env create -f /environment-codas-hep.yml
 
 RUN mkdir /workspace
 
