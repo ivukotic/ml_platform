@@ -21,6 +21,8 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
 RUN . /opt/conda/etc/profile.d/conda.sh && \
         conda env create -f /environment-codas-hep.yml
 
+RUN mkdir /workspace
+
 COPY private_jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
