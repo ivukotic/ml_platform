@@ -1,54 +1,54 @@
 name: codas-hep
 
 channels:
-- pytorch
-- conda-forge
+  - pytorch
+  - conda-forge
 
 dependencies:
-- cmake
-- cython
-- elasticsearch
-- graphviz
-- h5py
-- iminuit
-- ipykernel
-- ipywidgets
-- jsanimation
-- jupyter
-- jupyterlab
-- keras
-- librosa
-- make
-- matplotlib
-- metakernel
-- nb_conda_kernels
-- ninja
-- numpy
-- numba
-- numexpr
-- uncertainties
-- opencv
-- pandas
-- pillow
-- pip
-- pytables
-- python=3.7
-- pytorch
-- qtpy
-- rise
-- root
-- scikit-learn
-- scipy
-- seaborn
-- sympy
-- tensorflow
-- torchvision
-- tqdm
-- uproot
-- pip:
-  - gym
-  - torchtext
-  - torchviz
-  - pyjet
-  - particle
-  - pyhf
+  - cmake
+  - cython
+  - elasticsearch
+  - graphviz
+  - h5py
+  - iminuit
+  - ipykernel
+  - ipywidgets
+  - jsanimation
+  - jupyter
+  - jupyterlab
+  - keras
+  - librosa
+  - make
+  - matplotlib
+  - metakernel
+  - nb_conda_kernels
+  - ninja
+  - numpy
+  - numba
+  - numexpr
+  - uncertainties
+  - opencv
+  - pandas
+  - pillow
+  - pip
+  - pytables
+  - python=3.7
+  - pytorch
+  - qtpy
+  - rise
+  - root
+  - scikit-learn
+  - scipy
+  - seaborn
+  - sympy
+  - tensorflow
+  - torchvision
+  - tqdm
+  - uproot
+  - pip:
+      - gym
+      - torchtext
+      - torchviz
+      - pyjet
+      - particle
+      - pyhf

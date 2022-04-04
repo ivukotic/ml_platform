@@ -16,12 +16,16 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 
 RUN  . /opt/conda/etc/profile.d/conda.sh && \
         conda config --add channels conda-forge && \
-        conda install jupyterlab nb_conda_kernels && \
+        conda install jupyterlab && \
+        conda install nb_conda_kernels && \
         conda activate base && \
         jupyter serverextension enable --py jupyterlab --sys-prefix
 
+# RUN . /opt/conda/etc/profile.d/conda.sh && \
+#         conda env create -f /environment-codas-hep.yml
+
 RUN . /opt/conda/etc/profile.d/conda.sh && \
-        conda env create -f /environment-codas-hep.yml
+        conda env create -f /environment-dl-minicourse.yml
 
 RUN mkdir /workspace
 
