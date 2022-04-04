@@ -2,9 +2,10 @@ FROM nvidia/cuda:10.1-runtime-ubuntu18.04
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
-COPY environment-codas-hep.yml environment-dl-minicourse.yml environment .exec .run .shell /
+COPY environment-codas-hep.yml environment-dl-minicourse.yml environment.sh .exec run.sh .shell /
+RUN chmod 755 /.exec /run.sh /.shell 
 
-RUN apt-get update && apt-get install -y wget curl git jq
+RUN apt-get update && apt-get install -y wget curl git jq vim
 
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
@@ -13,18 +14,14 @@ RUN chmod +x sync_users_debian.sh
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
         bash ~/miniconda.sh -b -p /opt/conda
 
-RUN . /opt/conda/etc/profile.d/conda.sh && \
+RUN  . /opt/conda/etc/profile.d/conda.sh && \
         conda config --add channels conda-forge && \
-        conda install jupyterlab nb_conda_kernels
-
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-        chmod 755 /.exec /.run /.shell && \
+        conda install jupyterlab nb_conda_kernels && \
         conda activate base && \
         jupyter serverextension enable --py jupyterlab --sys-prefix
 
-RUN . /opt/conda/etc/profile.d/conda.sh 
-
-# RUN conda env create -f /environment-codas-hep.yml
+RUN . /opt/conda/etc/profile.d/conda.sh && \
+        conda env create -f /environment-codas-hep.yml
 
 RUN mkdir /workspace
 
@@ -33,4 +30,4 @@ RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
-CMD ["/.run"]
+CMD ["source /run"]

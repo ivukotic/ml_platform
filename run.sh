@@ -1,5 +1,5 @@
 #!/bin/bash
-. /environment
+source /environment.sh
 echo $PATH
 echo "========= all set up. ============"
 ls
