@@ -6,13 +6,20 @@ LABEL maintainer Jerry Ling <jiling@cern.ch>
 # Python 3 packages
 #############################
 
-RUN pip3 --no-cache-dir install \
+RUN python3.8 -m pip --no-cache-dir install \
         requests \
+        plumbum \
+        bokeh \
+        jupyter_bokeh \
         h5py \
         tables \
         ipykernel \
+        metakernel \
         jupyter \
         jupyterlab \
+        tensorflow \
+        tensorflow_datasets \
+        imageio \
         matplotlib \
         numpy \
         pandas \
@@ -24,13 +31,16 @@ RUN pip3 --no-cache-dir install \
         seaborn \
         keras \
         elasticsearch \
-        tensorflow-gpu \
         gym \
-        baselines \
-        pydot \
+        graphviz \
+        JSAnimation \
+        ipywidgets \
+        jupyterlab-git \
+        dask-labextension \
         uproot \
-        JSAnimation
-RUN python3 -m ipykernel.kernelspec
+        RISE \
+        Cython
+RUN python3.8 -m ipykernel install
 
 # Julia
 #############################
