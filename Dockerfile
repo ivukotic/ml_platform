@@ -55,6 +55,10 @@ RUN julia -e 'using Pkg; Pkg.add(["CUDA", "UnROOT", "FHist", "CairoMakie", "IJul
     julia -e 'using Pkg; Pkg.build(["IJulia", "PyCall"])' && \
     julia -e 'using Pkg; Pkg.precompile()'
 
+
+RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
+RUN chmod +x sync_users_debian.sh
+
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
@@ -65,7 +69,12 @@ COPY shell       /.shell
 
 RUN chmod 755 .exec .run .shell
 
+RUN mkdir /workspace
+COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
+
 RUN jupyter serverextension enable --py jupyterlab --sys-prefix
+
+RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
 #execute service
 CMD ["/.run"]
