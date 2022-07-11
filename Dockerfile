@@ -51,7 +51,8 @@ RUN wget "https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-${JULIA_VER
     ln -s /julia-${JULIA_VER}/bin/julia /usr/local/bin/julia
 
 # the build step for IJulia should install Jupyter kernal
-RUN julia -e 'using Pkg; Pkg.add(["CUDA", "UnROOT", "FHist", "CairoMakie", "IJulia", "PyCall", "ThreadsX", "LorentzVectorHEP", "JSON3", "CSV", "DataFrames", "KernelAbstractions", "Flux", "CUDAKernels"])' && \
+RUN export JUPYTER=`which jupyter` && \
+    julia -e 'using Pkg; Pkg.add(["CUDA", "UnROOT", "FHist", "CairoMakie", "IJulia", "PyCall", "ThreadsX", "LorentzVectorHEP", "JSON3", "CSV", "DataFrames", "KernelAbstractions", "Flux", "CUDAKernels"])' && \
     julia -e 'using Pkg; Pkg.build(["IJulia", "PyCall"])' && \
     julia -e 'using Pkg; Pkg.precompile()'
 
