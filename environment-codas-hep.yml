@@ -9,6 +9,7 @@ dependencies:
   - cython
   - elasticsearch
   - graphviz
+  - gym
   - h5py
   - iminuit
   - ipykernel
@@ -23,18 +24,22 @@ dependencies:
   - metakernel
   - nb_conda_kernels
   - ninja
-  - numpy
   - numba
   - numexpr
-  - uncertainties
+  - numpy
   - opencv
   - pandas
+  - particle
   - pillow
   - pip
+  - pipx
+  - pyhf
+  - pyjet
   - pytables
-  - python=3.7
+  - python=3.10
   - pytorch
   - qtpy
+  - rich
   - rise
   - root
   - scikit-learn
@@ -44,11 +49,8 @@ dependencies:
   - tensorflow
   - torchvision
   - tqdm
+  - uncertainties
   - uproot
   - pip:
-      - gym
       - torchtext
       - torchviz
-      - pyjet
-      - particle
-      - pyhf

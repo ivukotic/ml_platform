@@ -1,37 +1,40 @@
-FROM nvidia/cuda:10.1-runtime-ubuntu18.04
+FROM nvidia/cuda:11.1-runtime-ubuntu20.04
+#FROM ubuntu:20.04
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
-COPY environment-codas-hep.yml environment-dl-minicourse.yml environment.sh .exec run.sh .shell /
-RUN chmod 755 /.exec /run.sh /.shell 
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y wget curl git jq vim
+RUN apt update && apt install -y \
+    curl \
+    git \
+    jq \
+    vim \
+    wget \
+ && rm -rf /var/lib/apt/lists/*
 
+RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj -C /bin/ --strip-components=1 bin/micromamba \
+ && micromamba shell init --shell=bash -p /opt/conda
 
-RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
-RUN chmod +x sync_users_debian.sh
+COPY environment-codas-hep.yml environment-dl-minicourse.yml environment.yml /
 
-RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-        bash ~/miniconda.sh -b -p /opt/conda
+# Select one named environment
+RUN micromamba create -f environment.yml -y \
+  && micromamba create -f environment-dl-minicourse.yml -y \
+# && micromamba create -f environment-codas-hep.yml -y \
+  && micromamba clean -a
 
-RUN  . /opt/conda/etc/profile.d/conda.sh && \
-        conda config --add channels conda-forge && \
-        conda install jupyterlab && \
-        conda install nb_conda_kernels && \
-        conda activate base && \
-        jupyter serverextension enable --py jupyterlab --sys-prefix
+RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh \
+ && chmod +x sync_users_debian.sh
 
-# RUN . /opt/conda/etc/profile.d/conda.sh && \
-#         conda env create -f /environment-codas-hep.yml
-
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-        conda env create -f /environment-dl-minicourse.yml
-
-RUN mkdir /workspace
+RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
 COPY private_jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
-RUN git clone https://github.com/ivukotic/ML_platform_tests.git
+COPY environment.sh .exec run.sh .shell /
+RUN chmod 755 /.exec /run.sh /.shell \
+ && mkdir /workspace
 
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
-CMD ["source /run"]
+ENTRYPOINT ["/run.sh"]
+CMD ["/bin/bash"]
