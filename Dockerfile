@@ -24,6 +24,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         numpy \
         pandas \
         Pillow \
+        pyarrow \
         scipy \
         sklearn \
         qtpy \
