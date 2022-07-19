@@ -1,4 +1,4 @@
 export PATH="$PATH:/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin"
-source /opt/conda/etc/profile.d/conda.sh
-conda activate
+eval "$(micromamba shell hook --shell=bash)"
+micromamba activate base
 

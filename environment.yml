@@ -1,0 +1,7 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - jupyterlab
+  - nb_conda_kernels

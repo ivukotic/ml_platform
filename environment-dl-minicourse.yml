@@ -3,15 +3,17 @@ channels:
   - conda-forge
   - pytorch
 dependencies:
-  - python=3.7
-  - pip
-  - pytorch=1.1
-  - torchvision
-  - opencv
-  - matplotlib
+  - python=3.10
   - jupyterlab
   - librosa
+  - matplotlib
   - nb_conda_kernels
+  - opencv
+  - pip
+  - pipx
+  - pytorch=1.12
+  - rich
+  - torchvision
   - pip:
     - torchtext
     - torchviz
