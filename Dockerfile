@@ -11,6 +11,8 @@ RUN apt update && apt install -y \
     jq \
     vim \
     wget \
+    python3 \
+    python3-pip \
  && rm -rf /var/lib/apt/lists/*
 
 
