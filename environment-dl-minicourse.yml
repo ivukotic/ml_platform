@@ -24,7 +24,8 @@ dependencies:
   - torchaudio
   - torchvision
   - tqdm
-  - uproot
+  - scikit-hep
+  - scipy
   
   - pip:
     - torchtext
