@@ -13,6 +13,11 @@ RUN apt update && apt install -y \
     wget \
  && rm -rf /var/lib/apt/lists/*
 
+
+RUN python3.8 -m pip --no-cache-dir install \
+        jupyter \
+        jupyterlab
+
 RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj -C /bin/ --strip-components=1 bin/micromamba \
  && micromamba shell init --shell=bash -p /opt/conda
 
