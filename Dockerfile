@@ -14,7 +14,7 @@ RUN apt update && apt install -y \
  && rm -rf /var/lib/apt/lists/*
 
 
-RUN python3.8 -m pip --no-cache-dir install \
+RUN python3 -m pip --no-cache-dir install \
         jupyter \
         jupyterlab
 
