@@ -4,16 +4,29 @@ channels:
   - pytorch
 dependencies:
   - python=3.10
+  - h5py
+  - ipykernel
   - jupyterlab
   - librosa
   - matplotlib
   - nb_conda_kernels
+  - networkx
+  - numpy
   - opencv
+  - pandas
   - pip
   - pipx
   - pytorch=1.12
   - rich
+  - scikit-learn
+  - scikit-optimize
+  - tensorflow
+  - torchaudio
   - torchvision
+  - tqdm
+  - scikit-hep
+  - scipy
+  
   - pip:
     - torchtext
     - torchviz
