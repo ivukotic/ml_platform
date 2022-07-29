@@ -44,7 +44,7 @@ RUN python3.8 -m ipykernel install
 
 # Julia
 #############################
-ARG JULIA_VER=1.8.0-rc1
+ARG JULIA_VER=1.8.0-rc3
 RUN wget "https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-${JULIA_VER}-linux-x86_64.tar.gz" && \
     tar -xvzf julia-${JULIA_VER}-linux-x86_64.tar.gz && \
     rm -rf julia-${JULIA_VER}-linux-x86_64.tar.gz && \
