@@ -62,7 +62,7 @@ RUN mkdir $JULIA_PKGDIR
 RUN export JUPYTER_DATA_DIR=/usr/local/share/jupyter/ && \
     export JULIA_LOAD_PATH="$JULIA_PKGDIR:" && \
     export JULIA_DEPOT_PATH=$JULIA_PKGDIR && \
-    julia -e 'using Pkg; Pkg.add(["CUDA", "CairoMakie", "PyCall", "KernelAbstractions", "CUDAKernels"])' && \
+    julia -e 'using Pkg; Pkg.add(["CUDA", "PyCall", "KernelAbstractions", "CUDAKernels"])' && \
     julia -e 'using Pkg; Pkg.add("IJulia")' && \
     julia -e 'using Pkg; Pkg.precompile()'
 
