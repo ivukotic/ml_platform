@@ -8,3 +8,5 @@ ML platform containers
 
 Installs all kinds of analytics relevant packages.
 Builds and uploads ivukotic/ml_platform.
+
+fr1
