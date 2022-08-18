@@ -46,7 +46,7 @@ RUN python3.8 -m ipykernel install
 #############################
 ARG JULIA_MAJOR=1
 ARG JULIA_MINOR=8
-ARG JULIA_PATCH=0-rc4
+ARG JULIA_PATCH=0
 ARG JULIA_VER=$JULIA_MAJOR.$JULIA_MINOR.$JULIA_PATCH
 ENV JULIA_NUM_THREADS 8
 # this is where we install default packages
