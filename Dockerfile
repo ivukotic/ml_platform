@@ -47,9 +47,10 @@ RUN python3.8 -m ipykernel install
 RUN wget https://github.com/lava-nc/lava/releases/download/v0.4.0/lava-nc-0.4.0.tar.gz
 RUN python3 -m venv .venv_lava
 RUN python3 -m ipykernel install --user --name=.venv_lava
-RUN . .venv_lava/bin/activate
-RUN pip install lava-nc-0.4.0.tar.gz
-RUN deactivate
+RUN . .venv_lava/bin/activate && \
+    python3 -m pip install --upgrade pip && \
+    pip install lava-nc-0.4.0.tar.gz && \
+    deactivate
 #################################
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
