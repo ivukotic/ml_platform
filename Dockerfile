@@ -47,7 +47,7 @@ RUN python3.8 -m ipykernel install
 RUN wget https://github.com/lava-nc/lava/releases/download/v0.4.0/lava-nc-0.4.0.tar.gz
 RUN python3 -m venv .venv_lava
 RUN python3 -m ipykernel install --user --name=.venv_lava
-RUN source .venv_lava/bin/activate
+RUN . .venv_lava/bin/activate
 RUN pip install lava-nc-0.4.0.tar.gz
 RUN deactivate
 #################################
