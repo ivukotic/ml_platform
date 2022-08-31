@@ -44,17 +44,12 @@ RUN python3.8 -m ipykernel install
 
 # LAVA
 #############################
-
-RUN pip install "poetry>=1.1.13"
-RUN git clone git@github.com:lava-nc/lava.git
-RUN cd lava
-RUN git checkout v0.4.0
-RUN ./utils/githook/install-hook.sh
-RUN poetry config virtualenvs.in-project true
-RUN poetry install
-RUN source .venv/bin/activate
-RUN pytest
-
+RUN wget https://github.com/lava-nc/lava/releases/download/v0.4.0/lava-nc-0.4.0.tar.gz
+RUN python3 -m venv .venv_lava
+RUN python3 -m ipykernel install --user --name=.venv_lava
+RUN source .venv_lava/bin/activate
+RUN pip install lava-nc-0.4.0.tar.gz
+RUN deactivate
 #################################
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
