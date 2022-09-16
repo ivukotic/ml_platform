@@ -38,6 +38,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         jupyterlab-git \
         dask-labextension \
         uproot \
+        hist \
         RISE \
         Cython
 RUN python3.8 -m ipykernel install
