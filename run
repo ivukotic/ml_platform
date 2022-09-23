@@ -3,4 +3,13 @@
 echo $PATH
 echo "========= all set up. ============"
 ls
+# Read the user's customization script
+if [ -f /home/$OWNER/.jupyter/customize ]; then
+    echo "Installing customizations for $OWNER" 
+    pip install -r $OWNER/.jupyter/customize
+fi
+if [ ! -z "$OWNER" ]; then
+  echo "===== Chowning venv to user ======"
+  chown $OWNER: /jupyter
+fi
 "$@"
