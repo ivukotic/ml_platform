@@ -3,6 +3,23 @@ FROM hub.opensciencegrid.org/usatlas/ml_base:centos7
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
 #############################
+# Upgrade Git
+#############################
+
+RUN yum remove git  -y
+RUN yum install https://repo.ius.io/ius-release-el7.rpm -y
+RUN yum install git236 -y
+
+#############################
+# User utilities
+#############################
+
+RUN yum install -y \
+        htop \
+        emacs-nox \
+        ncdu
+
+#############################
 # Python 3 packages
 #############################
 
@@ -69,8 +86,12 @@ RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 RUN yum install yum-plugin-priorities -y
 RUN yum install https://repo.opensciencegrid.org/osg/3.6/osg-3.6-el7-release-latest.rpm -y
 RUN yum install condor -y 
+COPY condor/10-base.conf /etc/condor/config.d/10-base.conf
 
-COPY jupyter.sh /etc/profile.d/jupyter.sh
+# Configure the profile
+COPY profile.d/jupyter.sh /etc/profile.d/jupyter.sh
+COPY profile.d/quota.sh /etc/profile.d/quota.sh
+
 RUN git clone https://github.com/LincolnBryant/ML_platform_tests.git
 
 #execute service
