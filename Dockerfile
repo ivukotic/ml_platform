@@ -31,6 +31,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         tqdm \
         seaborn \
         keras \
+        keras-tuner \
         elasticsearch \
         gym \
         graphviz \
@@ -39,6 +40,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         jupyterlab-git \
         dask-labextension \
         uproot \
+        atlasify \
         RISE \
         Cython
 RUN python3.8 -m ipykernel install
