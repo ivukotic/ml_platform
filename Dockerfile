@@ -68,7 +68,7 @@ RUN export JUPYTER_DATA_DIR=/usr/local/share/jupyter/ && \
     julia -e 'using Pkg; Pkg.precompile()'
 
 # setup for end users
-RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(string(VERSION)[1:3])")\n\
+RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(join([VERSION.major, VERSION.minor], ".") )")\n\
 if !isfile(joinpath(target, "Project.toml"))\n\
     mkpath(target)\n\
     touch(joinpath(target, "Project.toml"))\n\
