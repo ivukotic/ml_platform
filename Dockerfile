@@ -47,7 +47,7 @@ RUN python3.8 -m ipykernel install
 #############################
 ARG JULIA_MAJOR=1
 ARG JULIA_MINOR=8
-ARG JULIA_PATCH=2
+ARG JULIA_PATCH=3
 ARG JULIA_VER=$JULIA_MAJOR.$JULIA_MINOR.$JULIA_PATCH
 ENV JULIA_NUM_THREADS 8
 # this is where we install default packages
@@ -68,7 +68,7 @@ RUN export JUPYTER_DATA_DIR=/usr/local/share/jupyter/ && \
     julia -e 'using Pkg; Pkg.precompile()'
 
 # setup for end users
-RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(string(VERSION)[1:3])")\n\
+RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(join([VERSION.major, VERSION.minor], ".") )")\n\
 if !isfile(joinpath(target, "Project.toml"))\n\
     mkpath(target)\n\
     touch(joinpath(target, "Project.toml"))\n\
