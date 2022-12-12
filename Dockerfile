@@ -5,7 +5,10 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 #############################
 # Python 3 packages
 #############################
-
+RUN python3.6 -m pip --no-cache-dir install \
+        ipykernel \
+        uproot
+        
 RUN python3.8 -m pip --no-cache-dir install \
         requests \
         plumbum \
@@ -43,6 +46,8 @@ RUN python3.8 -m pip --no-cache-dir install \
         atlasify \
         RISE \
         Cython
+   
+RUN python3.6 -m ipykernel install
 RUN python3.8 -m ipykernel install
 
 # build info
