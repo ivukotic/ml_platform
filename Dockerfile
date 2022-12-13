@@ -75,5 +75,5 @@ RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
-#execute service
+#execute
 CMD ["/.run"]
