@@ -6,49 +6,49 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 # Python 3 packages
 #############################
 RUN python3.6 -m pip --no-cache-dir install \
-        ipykernel \
-        uproot
-        
+    ipykernel \ 
+    uproot
+
 RUN python3.8 -m pip --no-cache-dir install \
-        requests \
-        plumbum \
-        bokeh \
-        jupyter_bokeh \
-        h5py \
-        tables \
-        ipykernel \
-        metakernel \
-        jupyter \
-        jupyterlab \
-        tensorflow \
-        tensorflow_datasets \
-        imageio \
-        matplotlib \
-        numpy \
-        pandas \
-        Pillow \
-        pyarrow \
-        scipy \
-        scikit-learn \
-        qtpy \
-        tqdm \
-        seaborn \
-        keras \
-        keras-tuner \
-        elasticsearch \
-        gym \
-        graphviz \
-        JSAnimation \
-        ipywidgets \
-        jupyterlab-git \
-        dask-labextension \
-        uproot \
-        atlasify \
-        RISE \
-        Cython
-   
-RUN python3.6 -m ipykernel install
-RUN python3.8 -m ipykernel install
+    requests \
+    plumbum \
+    bokeh \
+    jupyter_bokeh \
+    h5py \
+    tables \
+    ipykernel \
+    metakernel \
+    jupyter \
+    jupyterlab \
+    tensorflow \
+    tensorflow_datasets \
+    imageio \
+    matplotlib \
+    numpy \
+    pandas \
+    Pillow \
+    pyarrow \
+    scipy \
+    scikit-learn \
+    qtpy \
+    tqdm \
+    seaborn \
+    keras \
+    keras-tuner \
+    elasticsearch \
+    gym \
+    graphviz \
+    JSAnimation \
+    ipywidgets \
+    jupyterlab-git \
+    dask-labextension \
+    uproot \
+    atlasify \
+    RISE \
+    Cython
+
+RUN python3.6 -m ipykernel install --name py36 --display-name "Python 3.6"
+RUN python3.8 -m ipykernel install --name py38 --display-name "Python 3.8"
 
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
