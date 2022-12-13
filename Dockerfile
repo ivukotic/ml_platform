@@ -40,7 +40,7 @@ RUN python3.8 -m pip --no-cache-dir install \
     graphviz \
     JSAnimation \
     ipywidgets \
-    jupyterlab-git \
+    jupyterlab-git==0.30 \
     dask-labextension \
     uproot \
     atlasify \
