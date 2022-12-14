@@ -54,7 +54,7 @@ RUN python3.6 -m ipykernel install --name py36 --display-name "Python 3.6"
 RUN python3.8 -m ipykernel install --name py38 --display-name "Python 3.8"
 
 
-# build info
+# build info 
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
