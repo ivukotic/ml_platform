@@ -11,4 +11,4 @@ ML platform containers
 Installs all kinds of analytics relevant packages.
 Builds and uploads to dockerhub/ivukotic and Harbor
 
-fr 2
+fr 3
