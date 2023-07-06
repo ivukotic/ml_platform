@@ -25,7 +25,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         pandas \
         Pillow \
         scipy \
-        sklearn \
+        scikit-learn \
         qtpy \
         tqdm \
         seaborn \
