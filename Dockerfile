@@ -22,6 +22,9 @@ RUN yum install -y \
 #############################
 # Python 3 packages
 #############################
+RUN python3.6 -m pip --no-cache-dir install \
+    ipykernel \ 
+    uproot
 
 
 ENV VIRTUAL_ENV=/jupyter
@@ -31,43 +34,52 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3.8 -m pip install --upgrade pip setuptools wheel
 
 RUN python3.8 -m pip --no-cache-dir install \
-        requests \
-        plumbum \
-        bokeh \
-        jupyter_bokeh \
-        h5py \
-        tables \
-        ipykernel \
-        metakernel \
-        jupyter \
-        jupyterlab \
-        tensorflow \
-        tensorflow_datasets \
-        imageio \
-        matplotlib \
-        numpy \
-        pandas \
-        Pillow \
-        pyarrow \
-        scipy \
-        scikit-learn \
-        qtpy \
-        tqdm \
-        seaborn \
-        keras \
-        elasticsearch \
-        gym \
-        graphviz \
-        JSAnimation \
-        ipywidgets \
-        jupyterlab-git \
-        dask-labextension \
-        uproot \
-        RISE \
-        Cython
-RUN python3.8 -m ipykernel install
+RUN python3.8 -m ipykernel install \
+    requests \
+    plumbum \
+    bokeh \
+    jupyter_bokeh \
+    h5py \
+    tables \
+    ipykernel \
+    metakernel \
+    jupyter \
+    jupyterlab \
+    tensorflow \
+    tensorflow_datasets \
+    imageio \
+    matplotlib \
+    numpy \
+    pandas \
+    Pillow \
+    pyarrow \
+    scipy \
+    scikit-learn \
+    qtpy \
+    tqdm \
+    seaborn \
+    keras \
+    keras-tuner \
+    elasticsearch \
+    gym \
+    graphviz \
+    JSAnimation \
+    ipywidgets \
+    jupyterlab-git==0.30 \
+    dask-labextension \
+    uproot \
+    atlasify \
+    RISE \
+    Cython
 
-# build info
+RUN python3.6 -m pip install --upgrade pip
+RUN python3.8 -m pip install --upgrade pip
+
+RUN python3.6 -m ipykernel install --name py36 --display-name "Python 3.6"
+RUN python3.8 -m ipykernel install --name py38 --display-name "Python 3.8"
+
+
+# build info 
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
 COPY environment /environment
@@ -94,5 +106,5 @@ COPY profile.d/quota.sh /etc/profile.d/quota.sh
 
 RUN git clone https://github.com/LincolnBryant/ML_platform_tests.git
 
-#execute service
+#execute
 CMD ["/.run"]
