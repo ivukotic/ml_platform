@@ -34,7 +34,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN python3.8 -m pip install --upgrade pip setuptools wheel
 
 RUN python3.8 -m pip --no-cache-dir install \
-RUN python3.8 -m ipykernel install \
+    ipykernel \ 
     requests \
     plumbum \
     bokeh \
@@ -92,7 +92,7 @@ RUN chmod 755 .exec .run .shell
 RUN mkdir /workspace
 COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
 
-RUN jupyter serverextension enable --py jupyterlab --sys-prefix
+RUN jupyter server extension enable --py jupyterlab --sys-prefix
 
 # Install HTCondor
 RUN yum install yum-plugin-priorities -y
