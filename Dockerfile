@@ -36,6 +36,7 @@ RUN python3.8 -m pip --no-cache-dir install \
         JSAnimation \
         ipywidgets \
         jupyterlab-git \
+        jupyterlab \
         dask-labextension \
         uproot \
         hist \
@@ -89,8 +90,6 @@ RUN chmod 755 .exec .run .shell
 
 RUN mkdir /workspace
 COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
-
-RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
