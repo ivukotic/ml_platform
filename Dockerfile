@@ -7,40 +7,40 @@ LABEL maintainer Jerry Ling <jiling@cern.ch>
 #############################
 
 RUN python3.8 -m pip --no-cache-dir install \
-        requests \
-        plumbum \
-        bokeh \
-        jupyter_bokeh \
-        h5py \
-        tables \
-        ipykernel \
-        metakernel \
-        jupyter \
-        jupyterlab \
-        tensorflow \
-        tensorflow_datasets \
-        imageio \
-        matplotlib \
-        numpy \
-        pandas \
-        Pillow \
-        scipy \
-        sklearn \
-        qtpy \
-        tqdm \
-        seaborn \
-        keras \
-        elasticsearch \
-        gym \
-        graphviz \
-        JSAnimation \
-        ipywidgets \
-        jupyterlab-git \
-        dask-labextension \
-        uproot \
-        hist \
-        RISE \
-        Cython
+    requests \
+    plumbum \
+    bokeh \
+    jupyter_bokeh \
+    h5py \
+    tables \
+    ipykernel \
+    metakernel \
+    jupyter \
+    jupyterlab \
+    tensorflow \
+    # tensorflow_datasets \
+    # imageio \
+    matplotlib \
+    numpy \
+    pandas \
+    Pillow \
+    scipy \
+    sklearn \
+    qtpy \
+    tqdm \
+    seaborn \
+    keras \
+    # elasticsearch \
+    # gym \
+    # graphviz \
+    JSAnimation \
+    ipywidgets \
+    jupyterlab-git \
+    dask-labextension \
+    uproot \
+    hist \
+    RISE \
+    Cython
 RUN python3.8 -m ipykernel install
 
 # Julia
@@ -67,10 +67,10 @@ RUN export JUPYTER_DATA_DIR=/usr/local/share/jupyter/ && \
 
 # setup for end users
 RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(join([VERSION.major, VERSION.minor], ".") )")\n\
-if !isfile(joinpath(target, "Project.toml"))\n\
+    if !isfile(joinpath(target, "Project.toml"))\n\
     mkpath(target)\n\
     touch(joinpath(target, "Project.toml"))\n\
-end' >> /opt/julia-${JULIA_VER}/etc/julia/startup.jl
+    end' >> /opt/julia-${JULIA_VER}/etc/julia/startup.jl
 ENV JULIA_LOAD_PATH=":$JULIA_PKGDIR/environments/v$JULIA_MAJOR.$JULIA_MINOR"
 ENV JULIA_DEPOT_PATH=":$JULIA_PKGDIR"
 

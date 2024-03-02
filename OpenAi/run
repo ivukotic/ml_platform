@@ -1,8 +1,0 @@
-#!/bin/bash
-. /environment
-echo $PATH
-git clone https://github.com/ivukotic/rl_examples.git
-cd /rl_examples
-echo "========= all set up. ============"
-ls
-"$@"
