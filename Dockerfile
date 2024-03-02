@@ -8,9 +8,9 @@ LABEL maintainer Jerry Ling <jiling@cern.ch>
 
 RUN python3.8 -m pip --no-cache-dir install \
     requests \
-    plumbum \
-    bokeh \
-    jupyter_bokeh \
+    # plumbum \
+    # bokeh \
+    # jupyter_bokeh \
     h5py \
     tables \
     ipykernel \
@@ -23,23 +23,18 @@ RUN python3.8 -m pip --no-cache-dir install \
     matplotlib \
     numpy \
     pandas \
-    Pillow \
-    scipy \
-    scikit-learn \
-    qtpy \
-    tqdm \
-    seaborn \
-    keras \
-    # elasticsearch \
-    # gym \
-    # graphviz \
-    JSAnimation \
+    # Pillow \
+    # scipy \
+    # scikit-learn \
+    # qtpy \
+    # tqdm \
+    # seaborn \
     ipywidgets \
     jupyterlab-git \
     dask-labextension \
-    uproot \
+    # uproot \
     hist \
-    RISE \
+    # RISE \
     Cython
 RUN python3.8 -m ipykernel install
 
