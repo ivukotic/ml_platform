@@ -46,7 +46,7 @@ RUN python3.8 -m ipykernel install
 # Julia
 #############################
 ARG JULIA_MAJOR=1
-ARG JULIA_MINOR=9
+ARG JULIA_MINOR=10
 ARG JULIA_PATCH=0
 ARG JULIA_VER=$JULIA_MAJOR.$JULIA_MINOR.$JULIA_PATCH
 # this is where we install default packages
@@ -89,8 +89,6 @@ RUN chmod 755 .exec .run .shell
 
 RUN mkdir /workspace
 COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
-
-RUN jupyter serverextension enable --py jupyterlab --sys-prefix
 
 RUN git clone https://github.com/ivukotic/ML_platform_tests.git
 
