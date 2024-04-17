@@ -1,4 +1,4 @@
-name: Build ML platform image
+name: Build Julia Docker image
 
 on:
   push:

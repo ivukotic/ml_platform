@@ -1,4 +1,4 @@
-name: Build and Push ml_platform image to Harbor
+name: Build Julia image for Harbor
 
 on:
   push:
