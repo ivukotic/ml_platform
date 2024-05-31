@@ -73,7 +73,7 @@ COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.p
 
 RUN jupyter server extension enable --py jupyterlab --sys-prefix
 
-RUN git clone https://github.com/ivukotic/ML_platform_tests.git
+RUN git clone https://github.com/maniaclab/ML_platform_tests.git
 
 #execute
 CMD ["/.run"]
