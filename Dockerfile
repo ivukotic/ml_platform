@@ -75,5 +75,7 @@ RUN jupyter server extension enable --py jupyterlab --sys-prefix
 
 RUN git clone https://github.com/maniaclab/ML_platform_tests.git
 
+RUN echo "Done"
+
 #execute
 CMD ["/.run"]
