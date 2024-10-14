@@ -56,7 +56,7 @@ RUN mkdir $JULIA_PKGDIR
 # the build step for IJulia should install Jupyter kernal
 RUN export JUPYTER_DATA_DIR=/usr/local/share/jupyter/ && \
     export JULIA_LOAD_PATH="$JULIA_PKGDIR:" && \
-    export JULIA_DEPOT_PATH=$JULIA_PKGDIR && \
+    export JULIA_DEPOT_PATH=":$JULIA_PKGDIR" && \
     julia -e 'using Pkg; Pkg.add("IJulia")' && \
     julia -e 'using Pkg; Pkg.precompile()'
 
