@@ -41,8 +41,8 @@ RUN python3.8 -m ipykernel install
 # Julia
 #############################
 ARG JULIA_MAJOR=1
-ARG JULIA_MINOR=10
-ARG JULIA_PATCH=5
+ARG JULIA_MINOR=11
+ARG JULIA_PATCH=0
 ARG JULIA_VER=$JULIA_MAJOR.$JULIA_MINOR.$JULIA_PATCH
 # this is where we install default packages
 ENV JULIA_PKGDIR=/opt/julia
@@ -67,7 +67,7 @@ RUN echo 'target = joinpath(homedir(), ".julia", "environments", "v$(join([VERSI
     touch(joinpath(target, "Project.toml"))\n\
     end' >> /opt/julia-${JULIA_VER}/etc/julia/startup.jl
 ENV JULIA_LOAD_PATH=":$JULIA_PKGDIR/environments/v$JULIA_MAJOR.$JULIA_MINOR"
-ENV JULIA_DEPOT_PATH=":$JULIA_PKGDIR"
+ENV JULIA_DEPOT_PATH="~/.julia:$JULIA_PKGDIR"
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
 RUN chmod +x sync_users_debian.sh
