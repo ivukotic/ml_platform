@@ -5,8 +5,9 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 #############################
 # Python 3 packages
 #############################
-
-RUN python3 -m pip --no-cache-dir install \
+RUN python3 -m venv base
+RUN . base/bin/activate && \
+    python -m pip --no-cache-dir install \
     requests \
     plumbum \
     bokeh \
@@ -44,8 +45,8 @@ RUN python3 -m pip --no-cache-dir install \
     RISE \
     Cython
 
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m ipykernel install --name py312 --display-name "Python 3.12"
+RUN python -m pip install --upgrade pip
+RUN python -m ipykernel install --name py312 --display-name "Python 3.12"
 
 
 # build info 
