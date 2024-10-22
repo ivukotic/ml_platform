@@ -44,11 +44,8 @@ RUN python3 -m pip --no-cache-dir install \
     RISE \
     Cython
 
-RUN python3.6 -m pip install --upgrade pip
-RUN python3.8 -m pip install --upgrade pip
-
-RUN python3.6 -m ipykernel install --name py36 --display-name "Python 3.6"
-RUN python3.8 -m ipykernel install --name py38 --display-name "Python 3.8"
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m ipykernel install --name py312 --display-name "Python 3.12"
 
 
 # build info 
