@@ -3,20 +3,20 @@ name: Build ML platform image
 on:
   push:
     branches:
-      - "master"
+      - "OctUpgrade"
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.5.2
+        uses: actions/checkout@v4.2.1
 
       - name: Docker Build & Push Action
-        uses: mr-smithers-excellent/docker-build-push@v6.2
+        uses: mr-smithers-excellent/docker-build-push@v6.4
         with:
           image: ivukotic/ml_platform
-          tags: latest, ${{ github.sha }}
+          tags: oct_upgrade, ${{ github.sha }}
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}

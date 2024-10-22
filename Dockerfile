@@ -1,15 +1,12 @@
-FROM ivukotic/ml_base:latest
+FROM ivukotic/ml_base:oct_upgrade
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
 #############################
 # Python 3 packages
 #############################
-RUN python3.6 -m pip --no-cache-dir install \
-    ipykernel \ 
-    uproot
 
-RUN python3.8 -m pip --no-cache-dir install \
+RUN python3 -m pip --no-cache-dir install \
     requests \
     plumbum \
     bokeh \
