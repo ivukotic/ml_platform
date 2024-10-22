@@ -36,5 +36,5 @@ jobs:
           image: usatlas/ml-platform
           tags: julia, ${{ github.sha }}
           registry: hub.opensciencegrid.org
-          username: "robot\$usatlas+gitaction_temp_test"
+          username: "robot\\$usatlas+gitaction_temp_test"
           password: "ycsY7jbUygoxefNYp5Ii1cQvbBpbdftL"
