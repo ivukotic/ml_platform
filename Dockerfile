@@ -2,6 +2,10 @@ FROM ivukotic/ml_base:oct_upgrade
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
+
+RUN mkdir /workspace
+COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
+
 #############################
 # Python 3 packages
 #############################
@@ -45,7 +49,8 @@ RUN . base/bin/activate && \
     RISE \
     Cython && \
     python -m pip install --upgrade pip && \
-    python -m ipykernel install --name py312 --display-name "Python 3.12"
+    python -m ipykernel install --name py312 --display-name "Python 3.12" && \
+    jupyter server extension enable --py jupyterlab --sys-prefix
 
 
 # build info 
@@ -60,12 +65,6 @@ COPY run         /.run
 COPY shell       /.shell
 
 RUN chmod 755 .exec .run .shell
-
-
-RUN mkdir /workspace
-COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
-
-RUN jupyter server extension enable --py jupyterlab --sys-prefix
 
 RUN git clone https://github.com/maniaclab/ML_platform_tests.git
 
