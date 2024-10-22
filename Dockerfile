@@ -38,15 +38,14 @@ RUN . base/bin/activate && \
     graphviz \
     JSAnimation \
     ipywidgets \
-    jupyterlab-git==0.30 \
+    jupyterlab-git \
     dask-labextension \
     uproot \
     atlasify \
     RISE \
-    Cython
-
-RUN python -m pip install --upgrade pip
-RUN python -m ipykernel install --name py312 --display-name "Python 3.12"
+    Cython && \
+    python -m pip install --upgrade pip && \
+    python -m ipykernel install --name py312 --display-name "Python 3.12"
 
 
 # build info 
