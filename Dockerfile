@@ -42,7 +42,7 @@ RUN python3.8 -m ipykernel install
 #############################
 ARG JULIA_MAJOR=1
 ARG JULIA_MINOR=11
-ARG JULIA_PATCH=3
+ARG JULIA_PATCH=4
 ARG JULIA_VER=$JULIA_MAJOR.$JULIA_MINOR.$JULIA_PATCH
 # this is where we install default packages
 ENV JULIA_PKGDIR=/opt/julia
