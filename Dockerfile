@@ -78,4 +78,4 @@ RUN git clone https://github.com/maniaclab/ML_platform_tests.git
 RUN echo "Done"
 
 # CMD [ "./run" ]
-ENTRYPOINT [ "./run" ]
+ENTRYPOINT [ "/.run" ]
