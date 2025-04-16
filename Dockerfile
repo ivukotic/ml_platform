@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2.1-runtime-ubuntu20.04
+FROM nvidia/cuda:12.8.1-runtime-ubuntu20.04
 #FROM ubuntu:20.04
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
