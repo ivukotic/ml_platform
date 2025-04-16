@@ -21,8 +21,8 @@ RUN python3 -m pip --no-cache-dir install \
     jupyterlab
 
 RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj -C /bin/ --strip-components=1 bin/micromamba \
-    && micromamba shell init --shell=bash -p /opt/conda
-
+    && micromamba shell init --shell=bash /opt/conda
+# -p
 COPY environment-codas-hep.yml environment-dl-minicourse.yml environment.yml /
 
 # Select one named environment
