@@ -34,7 +34,7 @@ RUN micromamba create -f environment.yml -y \
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh \
     && chmod +x sync_users_debian.sh
 
-COPY environment /environment
+COPY environment /environment.sh
 COPY exec        /.exec
 COPY run         /.run
 COPY shell       /.shell
