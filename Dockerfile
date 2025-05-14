@@ -26,10 +26,10 @@ RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj -C
 COPY environment-codas-hep.yml environment-dl-minicourse.yml environment.yml /
 
 # Select one named environment
-RUN micromamba create -f environment.yml -y \
-    && micromamba create -f environment-dl-minicourse.yml -y \
+#RUN micromamba create -f environment.yml -y \
+#    && micromamba create -f environment-dl-minicourse.yml -y \
     # && micromamba create -f environment-codas-hep.yml -y \
-    && micromamba clean -a
+#    && micromamba clean -a
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh \
     && chmod +x sync_users_debian.sh
