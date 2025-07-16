@@ -53,7 +53,7 @@ RUN . base/bin/activate && \
     python -m ipykernel install --name py312 --display-name "Python 3.12" && \
     jupyter server extension enable --py jupyterlab --sys-prefix
 
-RUN chmod -R a+w /base/lib/python3.12/site-packages
+RUN chmod -R a+w /base
 
 # build info 
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
