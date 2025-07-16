@@ -6,6 +6,8 @@ LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 RUN mkdir /workspace
 COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.py
 
+RUN chmod -R a+w /base/lib/python3.12/site-packages
+
 #############################
 # Python 3 packages
 #############################
