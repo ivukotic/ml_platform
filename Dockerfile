@@ -49,8 +49,8 @@ RUN . base/bin/activate && \
     uproot \
     atlasify \
     RISE \
-    Cython && \
-    rucio-jupyterlab \
+    Cython \
+    rucio-jupyterlab && \
     python -m ipykernel install --name py312 --display-name "Python 3.12" && \
     jupyter server extension enable --py jupyterlab --sys-prefix
 
