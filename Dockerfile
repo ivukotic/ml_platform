@@ -12,6 +12,7 @@ COPY private_jupyter_notebook_config.py /usr/local/etc/jupyter_notebook_config.p
 #############################
 RUN python3 -m venv base
 RUN . base/bin/activate && \
+    python -m pip install --no-cache-dir --upgrade pip && \
     python -m pip --no-cache-dir install \
     requests \
     plumbum \
@@ -49,13 +50,13 @@ RUN . base/bin/activate && \
     atlasify \
     RISE \
     Cython && \
-    python -m pip install --upgrade pip && \
+    rucio-jupyterlab \
     python -m ipykernel install --name py312 --display-name "Python 3.12" && \
     jupyter server extension enable --py jupyterlab --sys-prefix
 
 RUN chmod -R a+w /base
 
-# build info 
+# build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
 RUN curl -OL https://raw.githubusercontent.com/maniaclab/ci-connect-api/master/resources/provisioner/sync_users_debian.sh
