@@ -1,4 +1,4 @@
-FROM ivukotic/ml_base:oct_upgrade
+FROM ivukotic/ml_base:2026-feb
 
 LABEL maintainer Ilija Vukotic <ivukotic@cern.ch>
 
