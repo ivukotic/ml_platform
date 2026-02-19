@@ -7,4 +7,4 @@ ML platform containers
 
 Micromamba (Anaconda) based.
 
-FR2
+fr 10
